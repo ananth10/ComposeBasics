@@ -32,13 +32,15 @@ import androidx.compose.ui.unit.dp
 import com.ananth.composebasics.basic_layouts.AlignYourBody
 import com.ananth.composebasics.basic_layouts.FavoriteCollectionCard
 import com.ananth.composebasics.basic_layouts.MyApp
+import com.ananth.composebasics.basic_state.WellnessApp
 import com.ananth.composebasics.ui.theme.ComposeBasicsTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyApp()
+            WellnessApp()
+//            MyApp()
 //            MyApp(Modifier.fillMaxWidth())
         }
     }
@@ -63,7 +65,7 @@ fun Greetings(names: List<String> = List(1000) { "$it" }) {
         Surface() {
             Column(modifier = Modifier.padding(vertical = 4.dp)) {
                 LazyColumn {
-                    item{ Text(text = "Header")}
+                    item { Text(text = "Header") }
                     items(names) { name ->
                         Greeting(name)
                     }
@@ -78,7 +80,10 @@ fun Greetings(names: List<String> = List(1000) { "$it" }) {
 @Composable
 fun Greeting(name: String) {
     var expanded by remember { mutableStateOf(false) }
-    val extraPadding by animateDpAsState(targetValue = if(expanded) 48.dp else 0.dp, animationSpec = tween(500))
+    val extraPadding by animateDpAsState(
+        targetValue = if (expanded) 48.dp else 0.dp,
+        animationSpec = tween(500)
+    )
     Surface(
         color = MaterialTheme.colors.primary,
         modifier = Modifier.padding(8.dp, vertical = 4.dp)
