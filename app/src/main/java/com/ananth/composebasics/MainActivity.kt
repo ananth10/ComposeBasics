@@ -33,13 +33,15 @@ import com.ananth.composebasics.basic_layouts.AlignYourBody
 import com.ananth.composebasics.basic_layouts.FavoriteCollectionCard
 import com.ananth.composebasics.basic_layouts.MyApp
 import com.ananth.composebasics.basic_state.WellnessApp
+import com.ananth.composebasics.lazy_layouts.LazyApp
 import com.ananth.composebasics.ui.theme.ComposeBasicsTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            WellnessApp()
+            LazyApp()
+//            WellnessApp()
 //            MyApp()
 //            MyApp(Modifier.fillMaxWidth())
         }
