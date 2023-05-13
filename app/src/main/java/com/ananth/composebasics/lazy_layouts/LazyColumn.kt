@@ -2,6 +2,7 @@ package com.ananth.composebasics.lazy_layouts
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -15,6 +16,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -99,6 +102,17 @@ object TopWithFooter : Arrangement.Vertical {
         }
     }
 
+}
+
+@Composable
+fun DrawBehind() {
+    val color by animateColorAsState(targetValue = Color.Cyan)
+//drawBehind will only trigger Draw phase and skip composition and layout phases.
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .drawBehind {
+            drawRect(color)
+        })
 }
 
 @Preview
