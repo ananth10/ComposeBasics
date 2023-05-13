@@ -18,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.ananth.composebasics.animation.AppAnimation
 import com.ananth.composebasics.performance_best_practices.PerformanceApp
 import com.ananth.composebasics.ui.theme.ComposeBasicsTheme
 
@@ -26,7 +27,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            PerformanceApp()
+             AppAnimation()
+//            PerformanceApp()
 //            LazyApp()
 //            WellnessApp()
 //            MyApp()
@@ -34,7 +36,12 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-data class MyBand(var name:String?=null, var bandName: String?=null, var artistName: String?=null)
+
+data class MyBand(
+    var name: String? = null,
+    var bandName: String? = null,
+    var artistName: String? = null
+)
 
 @Composable
 fun MyApp1(modifier: Modifier = Modifier) {

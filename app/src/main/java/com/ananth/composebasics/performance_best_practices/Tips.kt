@@ -1,7 +1,7 @@
 package com.ananth.composebasics.performance_best_practices
 
-import androidx.activity.compose.ReportDrawnAfter
-import androidx.activity.compose.ReportDrawnWhen
+//import androidx.activity.compose.ReportDrawnAfter
+//import androidx.activity.compose.ReportDrawnWhen
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -147,10 +147,10 @@ fun ReportDrawnWhenSample() {
         }
     }
     //this will call reportFullyDrawn when suspend function completes, this allows you to easily wait for an animation to finish or for data to load
-    ReportDrawnAfter{
-        lazyListState.animateScrollToItem(10)
-    }
-    ReportDrawnWhen {
-        contentComposed
-    }
+//    ReportDrawnAfter{
+//        lazyListState.animateScrollToItem(10)
+//    }
+//    ReportDrawnWhen {
+//        contentComposed
+//    }
 }
