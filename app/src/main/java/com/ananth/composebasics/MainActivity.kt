@@ -18,7 +18,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.view.WindowCompat
 import com.ananth.composebasics.animation.AppAnimation
+import com.ananth.composebasics.components.AppComponents
+import com.ananth.composebasics.insets.MyInsets
 import com.ananth.composebasics.performance_best_practices.PerformanceApp
 import com.ananth.composebasics.ui.theme.ComposeBasicsTheme
 
@@ -26,8 +29,11 @@ class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window,false)
         setContent {
-             AppAnimation()
+            MyInsets()
+//            AppComponents()
+//             AppAnimation()
 //            PerformanceApp()
 //            LazyApp()
 //            WellnessApp()
